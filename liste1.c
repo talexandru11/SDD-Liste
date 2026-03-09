@@ -15,7 +15,8 @@ typedef struct Prod produs;
 produs initializare(int codBare,const char* numeProdus, float pret, bool inStock, char clasaEnergetica) {
 	produs p;
 	p.codBare = codBare;
-	p.numeProdus = numeProdus;
+	p.numeProdus = (char*)malloc(sizeof(char) * strlen(numeProdus)+1);
+	strcpy_s(p.numeProdus, strlen(numeProdus) + 1, numeProdus);
 	p.pret = pret;
 	p.inStock = inStock;
 	p.clasaEnergetica = clasaEnergetica;
@@ -24,7 +25,11 @@ produs initializare(int codBare,const char* numeProdus, float pret, bool inStock
 }
 
 void afisare(produs p) {
-	printf("Cod: %d", p.codBare);
+	printf("Cod: %d\n", p.codBare);
+	printf("Nume: %s\n", p.numeProdus);
+	printf("In stoc: %s\n", p.inStock ? "Da" : "Nu");
+	printf("Clasa energetica: %c", p.clasaEnergetica);
+
 }
 
 void modificaAtribut(produs p) {
