@@ -18,5 +18,11 @@
     <ClCompile Include="liste.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="functiiStruct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vectori1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
